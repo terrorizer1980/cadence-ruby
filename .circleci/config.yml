@@ -6,6 +6,17 @@ jobs:
   test_gem:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
+    executor: ruby/default
+    steps:
+      - checkout
+      - ruby/bundle-install
+      - run:
+          name: Run RSpec
+          command: bundle exec rspec
+
+  test_examples:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
       - image: circleci/postgres:alpine
         name: postgres
         environment:
@@ -28,17 +39,6 @@ jobs:
     environment:
       - CADENCE_HOST=proxy
 
-    executor: ruby/default
-    steps:
-      - checkout
-      - ruby/bundle-install
-      - run:
-          name: Run RSpec
-          command: bundle exec rspec
-
-  test_examples:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
     steps:
       - checkout
       - run:
