@@ -37,7 +37,7 @@ jobs:
           CADENCE_ADDRESS: cadence:7933
 
     environment:
-      CADENCE_HOST: localhost
+      CADENCE_HOST: proxy
       CADENCE_PORT: 6666
 
     steps:
