@@ -7,9 +7,9 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.3-stretch-node
       - image: circleci/postgres:alpine
-         name: postgres
-         environment:
-           POSTGRES_PASSWORD: cadence
+        name: postgres
+        environment:
+          POSTGRES_PASSWORD: cadence
       - image: ubercadence/server:master-auto-setup
         name: cadence
         environment:
