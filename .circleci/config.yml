@@ -24,7 +24,7 @@ jobs:
       - image: ubercadence/server:master-auto-setup
         name: cadence
         environment:
-          DB: postgresql
+          DB: postgres
           DB_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PWD: cadence
