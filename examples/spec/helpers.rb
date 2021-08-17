@@ -10,8 +10,9 @@ module Helpers
     )
 
     client = Cadence.send(:default_client)
+    connection = client.send(:connection)
 
-    client.get_workflow_execution_history(
+    connection.get_workflow_execution_history(
       domain: Cadence.configuration.domain,
       workflow_id: workflow_id,
       run_id: run_id,
