@@ -8,7 +8,7 @@ fail 'Missing domain name, please run register_domain <domain_name>' unless doma
 
 begin
   Cadence.register_domain(domain, description)
-  Cadence.logger.info 'Domain created', { domain: domain }
+  Cadence.logger.info "Domain #{domain} created"
 rescue CadenceThrift::DomainAlreadyExistsError
-  Cadence.logger.info 'Domain already exists', { domain: domain }
+  Cadence.logger.info "Domain #{domain} already exists"
 end
