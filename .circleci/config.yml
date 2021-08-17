@@ -26,7 +26,7 @@ jobs:
           CADENCE_ADDRESS: cadence:7933
 
     environment:
-      - CADENCE_HOST=cadence
+      - CADENCE_HOST=proxy
 
     executor: ruby/default
     steps:
