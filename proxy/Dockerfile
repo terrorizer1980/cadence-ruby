@@ -4,7 +4,7 @@ ADD . /build/
 WORKDIR /build
 RUN go build -o proxy main.go
 
-FROM alpine
+FROM alpine:3.15.3
 COPY --from=builder /build/proxy /app/proxy
 WORKDIR /app
 EXPOSE 6666
